@@ -21,4 +21,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
     })
     .purgeCss({
         extensions: ['html', 'js', 'jsx', 'ts', 'tsx', 'php', 'vue', 'sass'],
-    });
+    })
+    .copy('./node_modules/flatpickr/dist/flatpickr.min.css', 'public/css')
+    .combine(['public/css/app.css', 'public/css/flatpickr.min.css'], 'public/css/main.css');
